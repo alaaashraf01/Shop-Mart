@@ -1,5 +1,5 @@
 
-
+export const dynamic = 'force-dynamic';
 
 import { BrandI } from "@/interfaces";
 import Image from "next/image";

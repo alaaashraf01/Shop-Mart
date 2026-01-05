@@ -1,4 +1,4 @@
-
+export const dynamic = 'force-dynamic';
 
 import { CategoryI } from "@/interfaces"
 import Image from "next/image"
