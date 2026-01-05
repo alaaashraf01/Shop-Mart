@@ -1,65 +1,74 @@
-import Image from "next/image";
 
-export default function Home() {
+
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowRight, MoveDown } from "lucide-react";
+
+async function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="relative min-h-screen bg-white overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-1/4 w-px h-full bg-stone-50 hidden lg:block -z-10"></div>
+      <div className="absolute top-0 right-1/4 w-px h-full bg-stone-50 hidden lg:block -z-10"></div>
+
+      {/* --- HERO SECTION --- */}
+      <section className="relative flex flex-col items-center justify-center min-h-screen pt-20 px-6 text-center">
+        <div className="max-w-[1200px] w-full z-10">
+          
+          {/* Top Label */}
+          <div className="overflow-hidden mb-8">
+            <span className="text-[10px] tracking-[0.8em] uppercase text-stone-400 block animate-in slide-in-from-bottom duration-1000">
+              New Era of Curated Goods
+            </span>
+          </div>
+
+          {/* Main Title - VÈRA Signature Style */}
+          <div className="relative mb-12">
+            <h1 className="text-8xl md:text-[12rem] font-serif italic leading-[0.75] tracking-tighter text-stone-900 animate-in fade-in zoom-in duration-1000">
+              Vèra<span className="text-stone-200 not-italic">.</span>
+            </h1>
+            <p className="mt-8 text-[11px] md:text-sm font-light tracking-[0.5em] text-stone-500 uppercase">
+              The Art of Living
+            </p>
+          </div>
+
+          {/* Description */}
+          <p className="max-w-md mx-auto text-stone-400 text-[10px] md:text-[11px] leading-relaxed uppercase tracking-[0.3em] mb-14 opacity-70">
+            A sanctuary for those who appreciate the intersection of 
+            meticulous craftsmanship and architectural design.
           </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
+            <Link href="/products">
+              <Button className="bg-stone-950 text-white hover:bg-black px-14 py-8 text-[10px] tracking-[0.4em] uppercase rounded-none transition-all duration-700">
+                Explore Edit <ArrowRight className="ml-4 w-4 h-4" />
+              </Button>
+            </Link>
+
+            <Link href="/categories" className="group">
+              <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-stone-900 border-b border-stone-100 pb-2 group-hover:border-stone-900 transition-all duration-500 cursor-pointer">
+                View Collections
+              </span>
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-stone-200">
+          <span className="text-[8px] tracking-[0.5em] uppercase [writing-mode:vertical-lr]">Scroll</span>
+          <MoveDown className="w-3 h-3 animate-bounce stroke-[1px]" />
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Side Label */}
+      <div className="fixed left-10 top-1/2 -translate-y-1/2 -rotate-90 hidden 2xl:block z-50 opacity-20">
+        <span className="text-[9px] tracking-[0.8em] uppercase text-stone-900 whitespace-nowrap">
+          Vèra Studio Essentials — Edition 2025
+        </span>
+      </div>
+    </main>
   );
 }
+
+export default Home;
