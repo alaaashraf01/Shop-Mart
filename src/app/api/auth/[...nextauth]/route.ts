@@ -13,7 +13,7 @@ export const authOptions = {
       async authorize(credentials: any) {
         try {
           // ✅ استبدال الرابط الثابت بمتغير البيئة
-          const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/signin`, {
+          const { data } = await axios.post(`${process.env.next_public_api_url}/auth/signin`, {
             email: credentials.email,
             password: credentials.password,
           });

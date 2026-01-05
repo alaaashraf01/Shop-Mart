@@ -29,7 +29,7 @@ export default function WishlistContextProvider({ children }: { children: ReactN
 
     const userToken = (session?.user as any)?.token;
     // ✅ استخدام رابط الـ API من متغيرات البيئة
-    const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/wishlist`;
+    const API_URL = `${process.env.next_public_api_url}/wishlist`;
 
     const getWishlist = useCallback(async () => {
         if (!userToken) {

@@ -43,7 +43,7 @@ export default function CartPage() {
     setShowConfirmModal(false); 
     setDeletingId(itemToDelete);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${itemToDelete}`, {
+      const response = await fetch(`${process.env.next_public_api_url}/cart/${itemToDelete}`, {
         method: 'DELETE', 
         headers: { 'token': userToken }
       })
@@ -77,7 +77,7 @@ export default function CartPage() {
     if (count < 1) return
     setUpdatingId(productId)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${productId}`, {
+      const response = await fetch(`${process.env.next_public_api_url}/cart/${productId}`, {
         method: 'PUT', 
         headers: { 'Content-Type': 'application/json', 'token': userToken },
         body: JSON.stringify({ count })

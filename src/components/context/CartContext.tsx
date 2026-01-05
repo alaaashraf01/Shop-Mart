@@ -37,7 +37,7 @@ export default function CartContextProvider({ children }: { children: ReactNode 
     const [isLoading, setIsLoading] = useState(false)
 
     const userToken = (session?.user as any)?.token;
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    const API_URL = process.env.next_public_api_url;
 
     // --- جلب بيانات السلة ---
     const getCart = useCallback(async () => {
