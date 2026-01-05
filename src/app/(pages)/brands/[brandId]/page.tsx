@@ -133,8 +133,8 @@ export default async function BrandProductsPage({ params }: any) {
   
   // ✅ تم استبدال اللينك الثابت بالمتغير من ملف الـ .env
   const [res, brandRes] = await Promise.all([
-    fetch(`${process.env.next_public_api_url}/products?brand=${brandId}&limit=50`),
-    fetch(`${process.env.next_public_api_url}/brands/${brandId}`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/products?brand=${brandId}&limit=50`),
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/brands/${brandId}`)
   ]);
   
   const data = await res.json();

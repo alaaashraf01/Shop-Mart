@@ -59,7 +59,7 @@ export default function Register() {
       setIsLoading(true)
       try {
         // ✅ تحديث الرابط لاستخدام متغير البيئة
-        const { data } = await axios.post(`${process.env.next_public_api_url}/auth/signup`, values)
+        const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/signup`, values)
         
         if (data.message === 'success') {
           toast.success('Welcome to VÈRA')

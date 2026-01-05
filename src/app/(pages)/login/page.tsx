@@ -22,7 +22,7 @@ const LoginPage = () => {
     const email = formData.get('email') as string
     const password = formData.get('password') as string
 
-    // NextAuth يتولى إرسال الطلب لـ next_public_api_url الذي حددناه في الإعدادات
+    // NextAuth يتولى إرسال الطلب لـ NEXT_PUBLIC_API_URL الذي حددناه في الإعدادات
     const result = await signIn('credentials', {
       email,
       password,

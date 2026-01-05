@@ -15,7 +15,7 @@ export default async function ProductDetailsPage({ params }: { params: Promise<{
   
   try {
     // ✅ تحديث الرابط لاستخدام متغير البيئة
-    const response = await fetch(`${process.env.next_public_api_url}/products/${productId}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${productId}`, {
         next: { revalidate: 3600 } // تخزين مؤقت لمدة ساعة لسرعة الاستجابة
     })
     const result = await response.json()

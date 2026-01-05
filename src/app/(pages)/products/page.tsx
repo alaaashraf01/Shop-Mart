@@ -15,7 +15,7 @@ async function ProductsPage() {
 
   try {
     // ✅ استخدام متغير البيئة مع الـ fetch
-    const response = await fetch(`${process.env.next_public_api_url}/products`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
       next: { revalidate: 60 } // إعادة التحقق كل 60 ثانية لضمان تحديث البيانات
     });
     

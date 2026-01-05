@@ -18,7 +18,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
   // ✅ استبدال الرابط الثابت بمتغير البيئة
   const res = await fetch(
-    `${process.env.next_public_api_url}/products?category=${categoryId}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/products?category=${categoryId}`,
     { next: { revalidate: 3600 } } // تحديث البيانات كل ساعة (مثالي لصفحات التصنيفات)
   );
 

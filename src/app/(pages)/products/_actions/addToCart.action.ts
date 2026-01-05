@@ -8,7 +8,7 @@
 import { revalidatePath } from 'next/cache'
 
 // ✅ استبدال الرابط الثابت بمتغير البيئة
-const CART_API = `${process.env.next_public_api_url}/cart`;
+const CART_API = `${process.env.NEXT_PUBLIC_API_URL}/cart`;
 
 export async function addToCartAction(productId: string, token: string) {
   try {

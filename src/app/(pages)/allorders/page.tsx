@@ -29,7 +29,7 @@ export default function AllOrders() {
   async function getUserOrders(id: string) {
     try {
       // ✅ تصحيح: إضافة الـ Backticks واستخدام المتغير
-      const res = await fetch(`${process.env.next_public_api_url}/orders/user/${id}`)
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/orders/user/${id}`)
       const data = await res.json()
       setOrders(data)
     } finally { setLoading(false) }

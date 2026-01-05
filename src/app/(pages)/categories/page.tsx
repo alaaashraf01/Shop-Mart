@@ -8,7 +8,7 @@ import Link from "next/link"
 async function getCategoriesData() {
   try {
     // ✅ تم استبدال الرابط الثابت بمتغير البيئة
-    const res = await fetch(`${process.env.next_public_api_url}/categories`, { 
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`, { 
       cache: "no-store" 
     });
     

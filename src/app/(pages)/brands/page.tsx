@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default async function Page() {
   // ✅ استبدال الرابط بمتغير البيئة مع استخدام Backticks
-  const res = await fetch(`${process.env.next_public_api_url}/brands`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/brands`, {
     next: { revalidate: 86400 } // تحديث مرة كل يوم لأن البراندات مش بتتغير كتير
   });
   

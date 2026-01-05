@@ -36,7 +36,7 @@ export default function ForgotPassword() {
       setIsLoading(true)
       try {
         // ✅ تحديث الرابط هنا
-        const { data } = await axios.post(`${process.env.next_public_api_url}/auth/forgotPasswords`, values)
+        const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/forgotPasswords`, values)
         if (data.statusMsg === "success") {
           toast.success("Code sent to your email")
           setUserEmail(values.email)
@@ -55,7 +55,7 @@ export default function ForgotPassword() {
       setIsLoading(true)
       try {
         // ✅ تحديث الرابط هنا
-        const { data } = await axios.post(`${process.env.next_public_api_url}/auth/verifyResetCode`, values)
+        const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/verifyResetCode`, values)
         if (data.status === "Success") {
           toast.success("Code verified")
           setStep(3)
@@ -78,7 +78,7 @@ export default function ForgotPassword() {
       setIsLoading(true)
       try {
         // ✅ تحديث الرابط هنا (لاحظي استخدام axios.put)
-        const { data } = await axios.put(`${process.env.next_public_api_url}/auth/resetPassword`, {
+        const { data } = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/auth/resetPassword`, {
           email: userEmail,
           newPassword: values.newPassword
         })

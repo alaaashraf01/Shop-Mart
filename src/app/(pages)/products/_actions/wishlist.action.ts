@@ -5,7 +5,7 @@
 import { cookies } from 'next/headers'
 
 // ✅ استبدال الرابط الثابت بمتغير البيئة
-const BASE_URL = `${process.env.next_public_api_url}/wishlist`;
+const BASE_URL = `${process.env.NEXT_PUBLIC_API_URL}/wishlist`;
 
 // دالة الإضافة
 export async function addToWishlistAction(productId: string) {
